@@ -55,7 +55,7 @@ int X509_CRL_print_ex(BIO *out, X509_CRL *x, unsigned long nmflag)
     X509_CRL_get0_signature(x, &sig, &sig_alg);
     BIO_puts(out, "    ");
     X509_signature_print(out, sig_alg, NULL);
-    BIO_printf(out, "%8sIssuer:/n", "");
+    BIO_printf(out, "%8sIssuer:\n", "");
     X509_NAME_print_ex(out, X509_CRL_get_issuer(x), 12, nmflag);
     BIO_puts(out, "\n");
     BIO_printf(out, "%8sLast Update: ", "");
